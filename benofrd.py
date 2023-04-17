@@ -1,4 +1,4 @@
-num = input("Press one to read the sales file, press three to check for accounting fraud. ")
+num = input("Press one to read the sales file. ")
 import os
 folder = os.getcwd()
 fileName = folder + "\\sales.csv"
