@@ -17,3 +17,4 @@ if num == "1":
 else:
     file.close()
     print("end")
+    
