@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import os
 
 # Digit frequency data
 digit_data = {
@@ -14,24 +15,8 @@ digits = digit_data['Digit']
 percentages = digit_data['Percentage']
 occurrences = digit_data['Occurrences']
 
-# Create a bar graph
-fig, ax = plt.subplots(figsize=(10, 6))
-ax.bar(digits, percentages)
-
-# Set labels and title
-ax.set_xlabel('Digit')
-ax.set_ylabel('Percentage')
-ax.set_title('Digit Frequency')
-
-# Display the bar graph
-plt.show()
-
-# Save the bar graph as an image file
-fig.savefig('results.png')
-
 # User input to read sales file and check for accounting fraud
 # Opening the folder and locating sales file.
-import os
 folder = os.getcwd()
 fileName = folder + "\\sales.csv"
 file = open(fileName, 'r')
@@ -76,6 +61,21 @@ while num:
             print(i+1, "as first digit frequency (%):")
             numFrequency(numList[i], salesList)
             print()
+
+        # Create a bar graph
+        fig, ax = plt.subplots(figsize=(10, 6))
+        ax.bar(digits, percentages)
+
+        # Set labels and title
+        ax.set_xlabel('Digit')
+        ax.set_ylabel('Percentage')
+        ax.set_title('Digit Frequency')
+
+        # Display the bar graph
+        plt.show()
+
+        # Save the bar graph as an image file
+        fig.savefig('results.png')
             
         num = input("Press 1 to read the sales file, 2 to check for accounting fraud, or any other key to exit. ")  
 
